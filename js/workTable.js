@@ -47,7 +47,7 @@ if (currentURL === operatorDeskURL) {
 
     function getElementByText(array, text) {
       for (let i = 0; i < array.length; i++) {
-        if (array[i].innerText === text) {
+        if (text.includes(array[i].innerText)) {
           return array[i];
         }
       }
@@ -56,7 +56,7 @@ if (currentURL === operatorDeskURL) {
 
     for (let i = 0; i < cards.length; i++) {
       let cardType = cards[i].innerText.split(' ')[1];
-      if (cardType === 'Кредитная') {
+      if (['Кредитная', 'Кредитна'].includes(cardType)) {
         creditPlastic = cards[i];
         btnSettingCreditCard = creditPlastic.getElementsByClassName('button-round inline ng-scope')[0];
         break;
@@ -68,7 +68,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+k", function () {
       btnSettingCreditCard.click();
       setTimeout(() => {
-        getElementByText(getCardMenu(), 'Детали кредита').click();
+        getElementByText(getCardMenu(), ['Детали кредита', 'Деталі кредиту']).click();
       }, 0);
     })
 
@@ -76,7 +76,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+p", function () {
       btnSettingCreditCard.click();
       setTimeout(() => {
-        getElementByText(getCardMenu(), 'Бесконтактная оплата').click();
+        getElementByText(getCardMenu(), ['Бесконтактная оплата','Безконтактна оплата']).click();
       }, 0);
     })
 
@@ -84,7 +84,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+l", function () {
       btnSettingCreditCard.click();
       setTimeout(() => {
-        getElementByText(getCardMenu(), 'История заявок на изменение лимита').click();
+        getElementByText(getCardMenu(), ['История заявок на изменение лимита','Історія заявок на зміну ліміту']).click();
       }, 0);
     })
 
@@ -92,7 +92,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+1", function () {
       btnMenuClient.click();
       setTimeout(() => {
-        getElementByText(getMenuClient(), 'Блокировка карт').click();
+        getElementByText(getMenuClient(), ['Блокировка карт', 'Блокування карт']).click();
         setTimeout(() => {
           document.getElementsByClassName('inversed block ng-scope')[0].click();
         }, 900);
@@ -103,7 +103,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+2", function () {
       btnMenuClient.click();
       setTimeout(() => {
-        getElementByText(getMenuClient(), 'Блокировка карт').click();
+        getElementByText(getMenuClient(), ['Блокировка карт', 'Блокування карт']).click();
         setTimeout(() => {
           document.getElementsByClassName('inversed block ng-scope')[1].click();
         }, 900);
@@ -124,12 +124,13 @@ if (currentURL === operatorDeskURL) {
     });
 
     Mousetrap.bind("alt+n", function () {
-      document.getElementsByClassName('main-view-sidebar additional-sidebar theme-colored-headers')[0].getElementsByClassName('button-round inline ng-scope')[0].click();
+      document.getElementsByClassName('main-view-sidebar additional-sidebar')[0].getElementsByClassName('button-round inline ng-scope')[0].click();
+      debugger;
       setTimeout(() => {
-        getElementByText(document.getElementsByClassName('dropdown-option ng-scope'), 'Карта точек выдачи').click();
+        getElementByText(document.getElementsByClassName('dropdown-option ng-scope'), ['Карта точек выдачи', 'Карта точок видачі']).click();
 
         setTimeout(() => {
-          getElementByText(document.getElementsByClassName('content ng-pristine ng-valid')[0].getElementsByClassName('ng-binding ng-scope'), 'Точки выдачи').click();
+          getElementByText(document.getElementsByClassName('content ng-pristine ng-valid')[0].getElementsByClassName('ng-binding ng-scope'), ['Точки выдачи', 'Точки видачі']).click();
         }, 0);
       }, 0);
     });
@@ -137,13 +138,13 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+s", function () {
       btnMenuClient.click();
       setTimeout(() => {
-        getElementByText(getMenuClient(), 'Платежи клиента').click();
+        getElementByText(getMenuClient(), ['Платежи клиента','Платежі клієнта']).click();
 
         setTimeout(() => {
-          getElementByText(getPaymentsClient(), 'Регулярные платежи').click();
+          getElementByText(getPaymentsClient(), ['Регулярные платежи', 'Регулярні платежі']).click();
 
           setTimeout(() => {
-            getElementByText(document.getElementsByClassName('modal-bg'), 'Подписки').click();
+            getElementByText(document.getElementsByClassName('modal-bg'), ['Подписки','Підписка']).click();
 
           }, 1000);
         }, 0);
@@ -153,7 +154,7 @@ if (currentURL === operatorDeskURL) {
     Mousetrap.bind("alt+y", function () {
       btnMenuClient.click();
       setTimeout(() => {
-        getElementByText(getMenuClient(), 'Доставка мгновенной карты').click();
+        getElementByText(getMenuClient(), ['Доставка мгновенной карты', 'Доставка миттєвої карти']).click();
       }, 0);
     });
   });
