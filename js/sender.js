@@ -10,7 +10,7 @@ this._directMap={};return this};d.prototype.stopCallback=function(a,b){if(-1<(" 
 d.init=function(){var a=d(u),b;for(b in a)"_"!==b.charAt(0)&&(d[b]=function(b){return function(){return a[b].apply(a,arguments)}}(b))};d.init();q.Mousetrap=d;"undefined"!==typeof module&&module.exports&&(module.exports=d);"function"===typeof define&&define.amd&&define(function(){return d})}})("undefined"!==typeof window?window:null,"undefined"!==typeof window?document:null);
 
 
-
+//test
 function getActiveChat() {
   return document.getElementsByClassName('sf_sidebar_company_chat--active')[0];
 }
