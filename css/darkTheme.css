@@ -1,0 +1,17 @@
+.x { //#090c10 - dialog 
+	background-color: #090c10;
+}
+
+.x1 { //chats phone
+	background-color: #0d1117;
+}
+
+.x2 { // header phone 
+	 background-color: #161b22;
+}
+
+.sf_chat_msg_divider, .sf_sidebar_company_inner, .sf_chat_msg_text, .sf_sidebar_company_chat, .sf_companies_filter {
+	border: 0px;
+}
+
+

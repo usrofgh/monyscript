@@ -1,0 +1,9 @@
+.sf_container-night {
+    height: 100vh;
+    width: 100%;
+    background: #17212b;
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}

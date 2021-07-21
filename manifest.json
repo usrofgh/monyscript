@@ -1,0 +1,25 @@
+{
+	"name": "Hot Operator",
+	"description": "This extension will speed up work and reduce monotonous actions",
+	"version": "1.0",
+	"browser_action": {
+		"default_icon": "hot.png",
+		"default_popup": "popup.html"
+	},
+	"manifest_version": 2,
+	//"permissions": [ "activetab" ], //article 
+	"permissions": ["activeTab", "*://p2p.monobank.com.ua/bin/*", "webRequest"],
+	"content_scripts": [
+    {
+      "matches": [
+        "*://chat.sender.ftband.net/*",
+				"*://operatordesk.ftband.net/*",
+				"*://info.ftband.net/*"
+      ],
+			"js": ["./js/workTable.js","./js/sender.js"],
+			"css": ["./css/styles.css", "./css/test.css"],
+      "run_at": "document_end"
+		}
+	]
+}
+// "./js/jquery-3.6.0.js", "./js/jquery-expando.js", "./js/mousetrap.js", "./js/confluence.js",	
